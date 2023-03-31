@@ -1,7 +1,6 @@
 .github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/ApiResponse.md
@@ -36,13 +35,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_api_response.py
-test/test_category.py
-test/test_order.py
-test/test_pet.py
-test/test_pet_api.py
-test/test_store_api.py
-test/test_tag.py
-test/test_user.py
-test/test_user_api.py
 tox.ini
