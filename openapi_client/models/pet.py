@@ -30,7 +30,7 @@ class Pet(BaseModel):
     """
     id: Optional[StrictInt] = None
     category: Optional[Category] = None
-    name: StrictStr = ...
+    name: StrictStr = Field(...)
     photo_urls: conlist(StrictStr) = Field(..., alias="photoUrls")
     tags: Optional[conlist(Tag)] = None
     status: Optional[StrictStr] = Field(None, description="pet status in the store")
@@ -40,6 +40,7 @@ class Pet(BaseModel):
     def status_validate_enum(cls, v):
         if v is None:
             return v
+
         if v not in ('available', 'pending', 'sold'):
             raise ValueError("must be one of enum values ('available', 'pending', 'sold')")
         return v

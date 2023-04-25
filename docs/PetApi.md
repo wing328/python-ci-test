@@ -25,12 +25,13 @@ Add a new pet to the store
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
+from openapi_client.models.pet import Pet
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -58,6 +59,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->add_pet: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -97,12 +99,12 @@ Deletes a pet
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -129,6 +131,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->delete_pet: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -168,12 +171,13 @@ Multiple status values can be provided with comma separated strings
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
+from openapi_client.models.pet import Pet
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -201,6 +205,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->find_pets_by_status: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -240,12 +245,13 @@ Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
+from openapi_client.models.pet import Pet
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -273,6 +279,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->find_pets_by_tags: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -312,12 +319,13 @@ Returns a single pet
 
 * Api Key Authentication (api_key):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
+from openapi_client.models.pet import Pet
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -349,6 +357,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->get_pet_by_id: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -389,12 +398,13 @@ Update an existing pet
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
+from openapi_client.models.pet import Pet
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -422,6 +432,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->update_pet: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -463,12 +474,12 @@ Updates a pet in the store with form data
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -496,6 +507,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->update_pet_with_form: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -536,12 +548,13 @@ uploads an image
 
 * OAuth Authentication (petstore_auth):
 ```python
-from __future__ import print_function
 import time
 import os
 import openapi_client
+from openapi_client.models.api_response import ApiResponse
 from openapi_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://petstore.swagger.io/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
@@ -561,7 +574,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.PetApi(api_client)
     pet_id = 56 # int | ID of pet to update
     additional_metadata = 'additional_metadata_example' # str | Additional data to pass to server (optional)
-    file = openapi_client.bytearray() # bytearray | file to upload (optional)
+    file = None # bytearray | file to upload (optional)
 
     try:
         # uploads an image
@@ -571,6 +584,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PetApi->upload_file: %s\n" % e)
 ```
+
 
 ### Parameters
 

@@ -32,6 +32,9 @@ class Category(BaseModel):
 
     @validator('name')
     def name_validate_regular_expression(cls, v):
+        if v is None:
+            return v
+
         if not re.match(r"^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$", v):
             raise ValueError(r"must validate the regular expression /^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$/")
         return v
