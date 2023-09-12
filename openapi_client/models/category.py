@@ -31,15 +31,17 @@ class Category(BaseModel):
     __properties = ["id", "name"]
 
     @validator('name')
-    def name_validate_regular_expression(cls, v):
-        if v is None:
-            return v
+    def name_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
 
-        if not re.match(r"^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$", v):
+        if not re.match(r"^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$", value):
             raise ValueError(r"must validate the regular expression /^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]*[a-zA-Z0-9]+$/")
-        return v
+        return value
 
     class Config:
+        """Pydantic configuration"""
         allow_population_by_field_name = True
         validate_assignment = True
 
@@ -70,7 +72,7 @@ class Category(BaseModel):
         if obj is None:
             return None
 
-        if type(obj) is not dict:
+        if not isinstance(obj, dict):
             return Category.parse_obj(obj)
 
         _obj = Category.parse_obj({

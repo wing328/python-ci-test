@@ -1,6 +1,5 @@
 # Tag
 
-A tag for a pet
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.tag import Tag
+from petstore_api.models.tag import Tag
 
 # TODO update the JSON string below
 json = "{}"

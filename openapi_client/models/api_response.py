@@ -32,6 +32,7 @@ class ApiResponse(BaseModel):
     __properties = ["code", "type", "message"]
 
     class Config:
+        """Pydantic configuration"""
         allow_population_by_field_name = True
         validate_assignment = True
 
@@ -62,7 +63,7 @@ class ApiResponse(BaseModel):
         if obj is None:
             return None
 
-        if type(obj) is not dict:
+        if not isinstance(obj, dict):
             return ApiResponse.parse_obj(obj)
 
         _obj = ApiResponse.parse_obj({

@@ -1,12 +1,12 @@
-# openapi_client.StoreApi
+# petstore_api.StoreApi
 
-All URIs are relative to *http://petstore.swagger.io/v2*
+All URIs are relative to *http://petstore.swagger.io:80/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_order**](StoreApi.md#delete_order) | **DELETE** /store/order/{orderId} | Delete purchase order by ID
+[**delete_order**](StoreApi.md#delete_order) | **DELETE** /store/order/{order_id} | Delete purchase order by ID
 [**get_inventory**](StoreApi.md#get_inventory) | **GET** /store/inventory | Returns pet inventories by status
-[**get_order_by_id**](StoreApi.md#get_order_by_id) | **GET** /store/order/{orderId} | Find purchase order by ID
+[**get_order_by_id**](StoreApi.md#get_order_by_id) | **GET** /store/order/{order_id} | Find purchase order by ID
 [**place_order**](StoreApi.md#place_order) | **POST** /store/order | Place an order for a pet
 
 
@@ -22,21 +22,21 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.StoreApi(api_client)
+    api_instance = petstore_api.StoreApi(api_client)
     order_id = 'order_id_example' # str | ID of the order that needs to be deleted
 
     try:
@@ -45,6 +45,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling StoreApi->delete_order: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -87,14 +88,14 @@ Returns a map of status codes to quantities
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -109,9 +110,9 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.StoreApi(api_client)
+    api_instance = petstore_api.StoreApi(api_client)
 
     try:
         # Returns pet inventories by status
@@ -121,6 +122,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling StoreApi->get_inventory: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -151,29 +153,29 @@ This endpoint does not need any parameter.
 
 Find purchase order by ID
 
-For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions
+For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 
 ### Example
 
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.order import Order
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.order import Order
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.StoreApi(api_client)
+    api_instance = petstore_api.StoreApi(api_client)
     order_id = 56 # int | ID of pet that needs to be fetched
 
     try:
@@ -184,6 +186,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling StoreApi->get_order_by_id: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -226,23 +229,23 @@ Place an order for a pet
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.order import Order
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.order import Order
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.StoreApi(api_client)
-    order = openapi_client.Order() # Order | order placed for purchasing the pet
+    api_instance = petstore_api.StoreApi(api_client)
+    order = petstore_api.Order() # Order | order placed for purchasing the pet
 
     try:
         # Place an order for a pet
@@ -252,6 +255,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling StoreApi->place_order: %s\n" % e)
 ```
+
 
 
 ### Parameters

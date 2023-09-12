@@ -35,15 +35,17 @@ class Order(BaseModel):
     __properties = ["id", "petId", "quantity", "shipDate", "status", "complete"]
 
     @validator('status')
-    def status_validate_enum(cls, v):
-        if v is None:
-            return v
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
 
-        if v not in ('placed', 'approved', 'delivered'):
+        if value not in ('placed', 'approved', 'delivered'):
             raise ValueError("must be one of enum values ('placed', 'approved', 'delivered')")
-        return v
+        return value
 
     class Config:
+        """Pydantic configuration"""
         allow_population_by_field_name = True
         validate_assignment = True
 
@@ -74,7 +76,7 @@ class Order(BaseModel):
         if obj is None:
             return None
 
-        if type(obj) is not dict:
+        if not isinstance(obj, dict):
             return Order.parse_obj(obj)
 
         _obj = Order.parse_obj({

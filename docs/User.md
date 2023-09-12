@@ -1,6 +1,5 @@
 # User
 
-A User who is purchasing from the pet store
 
 ## Properties
 Name | Type | Description | Notes
@@ -17,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.user import User
+from petstore_api.models.user import User
 
 # TODO update the JSON string below
 json = "{}"

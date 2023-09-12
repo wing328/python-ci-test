@@ -1,6 +1,5 @@
 # Order
 
-An order for a pets from the pet store
 
 ## Properties
 Name | Type | Description | Notes
@@ -15,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.order import Order
+from petstore_api.models.order import Order
 
 # TODO update the JSON string below
 json = "{}"

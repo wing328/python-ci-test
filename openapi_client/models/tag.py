@@ -31,6 +31,7 @@ class Tag(BaseModel):
     __properties = ["id", "name"]
 
     class Config:
+        """Pydantic configuration"""
         allow_population_by_field_name = True
         validate_assignment = True
 
@@ -61,7 +62,7 @@ class Tag(BaseModel):
         if obj is None:
             return None
 
-        if type(obj) is not dict:
+        if not isinstance(obj, dict):
             return Tag.parse_obj(obj)
 
         _obj = Tag.parse_obj({

@@ -1,6 +1,6 @@
-# openapi_client.UserApi
+# petstore_api.UserApi
 
-All URIs are relative to *http://petstore.swagger.io/v2*
+All URIs are relative to *http://petstore.swagger.io:80/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,37 +23,26 @@ This can only be done by the logged in user.
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.user import User
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
-    user = openapi_client.User() # User | Created user object
+    api_instance = petstore_api.UserApi(api_client)
+    user = petstore_api.User() # User | Created user object
 
     try:
         # Create user
@@ -61,6 +50,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->create_user: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -75,7 +65,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -98,37 +88,26 @@ Creates list of users with given input array
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.user import User
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
-    user = [openapi_client.User()] # List[User] | List of user object
+    api_instance = petstore_api.UserApi(api_client)
+    user = [petstore_api.User()] # List[User] | List of user object
 
     try:
         # Creates list of users with given input array
@@ -136,6 +115,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->create_users_with_array_input: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -150,7 +130,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -173,37 +153,26 @@ Creates list of users with given input array
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.user import User
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
-    user = [openapi_client.User()] # List[User] | List of user object
+    api_instance = petstore_api.UserApi(api_client)
+    user = [petstore_api.User()] # List[User] | List of user object
 
     try:
         # Creates list of users with given input array
@@ -211,6 +180,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->create_users_with_list_input: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -225,7 +195,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -248,35 +218,24 @@ This can only be done by the logged in user.
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
+    api_instance = petstore_api.UserApi(api_client)
     username = 'username_example' # str | The name that needs to be deleted
 
     try:
@@ -285,6 +244,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->delete_user: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -299,7 +259,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -326,22 +286,22 @@ Get user by user name
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.user import User
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
+    api_instance = petstore_api.UserApi(api_client)
     username = 'username_example' # str | The name that needs to be fetched. Use user1 for testing.
 
     try:
@@ -352,6 +312,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->get_user_by_name: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -394,21 +355,21 @@ Logs user into the system
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
+    api_instance = petstore_api.UserApi(api_client)
     username = 'username_example' # str | The user name for login
     password = 'password_example' # str | The password for login in clear text
 
@@ -420,6 +381,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->login_user: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -445,7 +407,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | successful operation |  * Set-Cookie - Cookie authentication key for use with the &#x60;api_key&#x60; apiKey authentication. <br>  * X-Rate-Limit - calls per hour allowed by the user <br>  * X-Expires-After - date in UTC when token expires <br>  |
+**200** | successful operation |  * X-Rate-Limit - calls per hour allowed by the user <br>  * X-Expires-After - date in UTC when token expires <br>  |
 **400** | Invalid username/password supplied |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -459,35 +421,24 @@ Logs out current logged in user session
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
+    api_instance = petstore_api.UserApi(api_client)
 
     try:
         # Logs out current logged in user session
@@ -495,6 +446,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->logout_user: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -506,7 +458,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -529,38 +481,27 @@ This can only be done by the logged in user.
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import petstore_api
+from petstore_api.models.user import User
+from petstore_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://petstore.swagger.io/v2
+# Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://petstore.swagger.io/v2"
+configuration = petstore_api.Configuration(
+    host = "http://petstore.swagger.io:80/v2"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
+    api_instance = petstore_api.UserApi(api_client)
     username = 'username_example' # str | name that need to be deleted
-    user = openapi_client.User() # User | Updated user object
+    user = petstore_api.User() # User | Updated user object
 
     try:
         # Updated user
@@ -568,6 +509,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->update_user: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -583,7 +525,7 @@ void (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 

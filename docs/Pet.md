@@ -1,6 +1,5 @@
 # Pet
 
-A pet for sale in the pet store
 
 ## Properties
 Name | Type | Description | Notes
@@ -15,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.pet import Pet
+from petstore_api.models.pet import Pet
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,6 +1,5 @@
 # ApiResponse
 
-Describes the result of uploading an image resource
 
 ## Properties
 Name | Type | Description | Notes
@@ -12,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_response import ApiResponse
+from petstore_api.models.api_response import ApiResponse
 
 # TODO update the JSON string below
 json = "{}"
